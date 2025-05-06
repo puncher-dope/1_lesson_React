@@ -29,7 +29,7 @@ function App() {
 					Edit <code>src/App.jsx</code> and save to test HMR
 				</p>
 
-				<div>Время сейчас: {now.toLocaleTimeString()}</div>
+				<div>Время сейчас: {now.toLocaleDateString()}</div>
 			</div>
 			<p className="read-the-docs">
 				Click on the Vite and React logos to learn more
