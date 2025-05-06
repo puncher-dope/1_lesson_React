@@ -1,9 +1,8 @@
 
-import React, { createElement, useState } from 'react'
+import { createElement, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
-
+import styles from './App.module.css'
 
 function App() {
 	const [count, setCount] = useState(0)
@@ -12,33 +11,36 @@ function App() {
 		setNow(new Date)
 	}, 1000)
 
-	function handleClick() {
-		setCount((count) => count + 1)
-	}
+	return (
+		<>
+			<div>
+				<a href="https://vite.dev" target="_blank">
+					<img src={viteLogo} className="logo" alt="Vite logo" />
+				</a>
+				<a href="https://react.dev" target="_blank">
+					<img src={reactLogo} className="logo react" alt="React logo" />
+				</a>
+			</div>
+			<h1>Vite + React</h1>
+			<div className={styles.card}>
+				<button onClick={() => setCount((count) => count + 1)}>
+					count is {count}
+				</button>
+				<p>
+					Edit <code>src/App.jsx</code> and save to test HMR
+				</p>
 
-	const timer = now.toLocaleDateString()
+				<div>Время сейчас: {now.toLocaleDateString()}</div>
+
+				{/* toLocaleDateString() декларативный */}
 
 
-	return createElement(React.Fragment, null,
-		createElement('div', null,
-			createElement('a', { href: "https://vite.dev", target: "_blank" },
-				createElement('img', { src: '/vite.svg', className: "logo", alt: "Vite logo" })
-			),
-			createElement('a', { href: "https://react.dev", target: "_blank" },
-				createElement('img', { src: '/src/assets/react.svg', className: "logo react", alt: "React logo" })
-			)
-		),
-		createElement('h1', null, 'Vite + React'),
-		createElement('div', { className: "card" },
-			createElement('button', { onClick: handleClick }, `count is ${count}`),
-			createElement('p', null,
-				'Edit',
-				createElement('code', null, 'src/App.jsx')),
-			' and save to test HMR'
-		),
-		createElement('div', null, `Время сейчас: ${timer}`),
-		createElement('p', { className: "read-the-docs" }, 'Click on the Vite and React logos to learn more')
 
+			</div>
+			<p className={styles.readTheDocs}>
+				Click on the Vite and React logos to learn more
+			</p>
+		</>
 	)
 }
 export default App
