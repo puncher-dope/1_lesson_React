@@ -8,7 +8,7 @@ export default function Task1() {
 	const onInputButtonClick = () => {
 		const promptValue = prompt('Введите сообщение')
 
-		if (promptValue.length < 3) {
+		if (promptValue.length <= 2) {
 			setError(true)
 			setValue('')
 		} else {
@@ -18,7 +18,7 @@ export default function Task1() {
 	}
 
 	const isValueValid = () => {
-		if (value.length < 3) {
+		if (value.length <= 2) {
 			false
 		} else {
 			true
@@ -27,7 +27,7 @@ export default function Task1() {
 
 	const onAddButtonClick = () => {
 
-		if (value.length > 3) {
+		if (value.length >= 2) {
 			setValue('')
 			setError('')
 			list.push(value)
